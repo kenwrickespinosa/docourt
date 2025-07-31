@@ -1,0 +1,31 @@
+# General (OS, IDE, etc.)
+.DS_Store
+Thumbs.db
+*.log
+*.env
+.env.*
+*.iml
+.vscode/
+.idea/
+*.class
+
+# ReactJS (client folder)
+client/node_modules/
+client/.env
+client/.next/
+client/.DS_Store
+client/build/
+client/dist/
+
+# Spring Boot (server folder)
+server/target/
+server/.classpath
+server/.project
+server/.settings/
+server/.env
+server/.mvn/
+server/mvnw
+server/mvnw.cmd
+server/*.log
+server/*.jar
+server/*.war
