@@ -1,8 +1,10 @@
-import React from 'react'
+import LandingPage from "./pages/LandingPage"
 
 function App() {
   return (
-    <div className="bg-red-400">Welcome to App</div>
+    <div>
+      <LandingPage />
+    </div>
   )
 }
 
