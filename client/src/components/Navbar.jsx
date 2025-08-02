@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar({ scrollToHero, scrollToAbout }) {
   return (
@@ -17,6 +18,9 @@ function Navbar({ scrollToHero, scrollToAbout }) {
             </button>
           </li>
         </ul>
+        <div>
+            <Link to="/login">Log In</Link>
+        </div>
       </div>
     </nav>
   );
