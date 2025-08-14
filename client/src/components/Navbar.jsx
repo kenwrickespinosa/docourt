@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar({ scrollToHero, scrollToAbout }) {
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="bg-white shadow-md">
       <div>
         <div>Docourt</div>
         <ul>

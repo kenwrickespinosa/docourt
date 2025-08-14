@@ -77,7 +77,7 @@ function AuthForm({ type, onSubmit }) {
           className="border-2"
         />
       </div>
-      <button type="submit">
+      <button type="submit" className="cursor-pointer">
         {isSignUp ? "Sign Up" : "Log In"}
       </button>
     </form>
