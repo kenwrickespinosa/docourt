@@ -4,14 +4,14 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kenwrick.case_manager_server.user.User;
+import com.kenwrick.case_manager_server.userlegalcase.UserLegalcase;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,6 +39,6 @@ public class Legalcase {
     @Column(name = "updated_at")
     private Instant updatedAt = Instant.now();
 
-    @ManyToMany(mappedBy = "legalcases")
-    private List<User> users = new ArrayList<>();
+    @OneToMany(mappedBy = "legalcase")
+    private List<UserLegalcase> userLegalcases = new ArrayList<>();
 }

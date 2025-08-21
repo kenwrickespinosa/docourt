@@ -25,10 +25,14 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // public User updateUser(Long id, User updatedUser) {
-    //     return userRepository.findById(id).map(user -> {
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 
-    //     })
+    // public User updateUser(Long id, User updatedUser) {
+    // return userRepository.findById(id).map(user -> {
+
+    // })
     // }
 
     public void deleteById(Long id) {
