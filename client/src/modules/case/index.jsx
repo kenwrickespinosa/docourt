@@ -6,7 +6,7 @@ function Case() {
   const [caseList, setCaseList] = useState([]);
   const [isFormOpen, setIsFormOpen] = useState(false);
   return (
-    <div className="bg-green-200">
+    <div>
       <div>
         <p className="text-blue-400">Cases Page</p>
       </div>

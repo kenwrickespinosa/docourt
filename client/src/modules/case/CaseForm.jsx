@@ -50,7 +50,7 @@ function CaseForm({ caseList, setCaseList }) {
 
   return (
     <div className="">
-      <form onSubmit={handleCreateCase} className="flex flex-col border w-max">
+      <form onSubmit={handleCreateCase} className="flex flex-col items-center border">
         <input
           type="text"
           name="title"

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../hooks/contexts/UserContext";
 
-function CaseList({caseList, setCaseList}) {
+function CaseList({ caseList, setCaseList }) {
   const { token } = useContext(UserContext);
 
   useEffect(() => {
@@ -36,29 +36,35 @@ function CaseList({caseList, setCaseList}) {
       <div>
         <p>List of cases</p>
       </div>
-      <div className="flex justify-center">
-        <table>
-          <thead>
-            <tr>
-              <th className="font-inter">Title</th>
-              <th className="font-inter">Description</th>
-              <th className="font-inter">Case Number</th>
-              <th className="font-inter">Court</th>
-              <th className="font-inter">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {caseList.map((c) => (
-              <tr key={c.caseNumber}>
-                <td className="font-inter">{c.title}</td>
-                <td className="font-inter">{c.description}</td>
-                <td className="font-inter">{c.caseNumber}</td>
-                <td className="font-inter">{c.court}</td>
-                <td className="font-inter text-yellow-400">{c.status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Grid */}
+      <div className="border rounded p-2 mx-20">
+        {/* Grid header */}
+        <div className="grid grid-cols-[1fr_300px] gap-4 p-2 font-inter text-sm font-semibold border-b">
+          <div>Title</div>
+          <div className="grid grid-cols-4 gap-2">
+            <div>Case Number</div>
+            <div>Start</div>
+            <div>Due</div>
+            <div>Status</div>
+          </div>
+        </div>
+        {/* Grid body */}
+        <div className="grid grid-rows-[auto]">
+          {caseList.map((c) => (
+            <div
+              key={c.caseNumber}
+              className="grid grid-cols-[1fr_300px] gap-4 p-2 border-b hover:bg-gray-50 font-inter text-sm"
+            >
+              <div>{c.title}</div>
+              <div className="grid grid-cols-4 gap-2">
+                <div>{c.caseNumber}</div>
+                <div>{c.startDate}</div>
+                <div>{c.dueDate}</div>
+                <div>{c.status}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
