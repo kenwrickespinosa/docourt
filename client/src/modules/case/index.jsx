@@ -4,17 +4,29 @@ import CaseList from "./CaseList";
 
 function Case() {
   const [caseList, setCaseList] = useState([]);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   return (
-    <div>
+    <div className="bg-green-200">
       <div>
-        <p>Cases Page</p>
+        <p className="text-blue-400">Cases Page</p>
       </div>
       <div>
-        <CaseForm caseList={caseList} setCaseList={setCaseList} />
+        <button
+          onClick={() => setIsFormOpen(!isFormOpen)}
+          className="cursor-pointer"
+        >
+          Create Case
+        </button>
       </div>
-      <div>
-        <CaseList caseList={caseList} setCaseList={setCaseList} />
-      </div>
+      {isFormOpen ? (
+        <div>
+          <CaseForm caseList={caseList} setCaseList={setCaseList} />
+        </div>
+      ) : (
+        <div>
+          <CaseList caseList={caseList} setCaseList={setCaseList} />
+        </div>
+      )}
     </div>
   );
 }

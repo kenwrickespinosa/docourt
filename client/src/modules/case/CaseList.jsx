@@ -36,17 +36,29 @@ function CaseList({caseList, setCaseList}) {
       <div>
         <p>List of cases</p>
       </div>
-      <div>
-        {caseList.map((item) => (
-            <ul key={item.caseNumber}>
-                <li>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
-                  <em>{item.caseNumber}</em>
-                  <p>{item.status}</p>
-                </li>
-            </ul>
-        ))}
+      <div className="flex justify-center">
+        <table>
+          <thead>
+            <tr>
+              <th className="font-inter">Title</th>
+              <th className="font-inter">Description</th>
+              <th className="font-inter">Case Number</th>
+              <th className="font-inter">Court</th>
+              <th className="font-inter">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseList.map((c) => (
+              <tr key={c.caseNumber}>
+                <td className="font-inter">{c.title}</td>
+                <td className="font-inter">{c.description}</td>
+                <td className="font-inter">{c.caseNumber}</td>
+                <td className="font-inter">{c.court}</td>
+                <td className="font-inter text-yellow-400">{c.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
